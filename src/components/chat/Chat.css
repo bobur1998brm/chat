@@ -1,0 +1,125 @@
+.chat{
+    width: 100%;
+    height: 100vh;
+    background: #122C44;
+    display: flex;
+
+}
+.sidebar{
+    width: 20%;
+    height: 100%;
+    color: #ddd;
+    position: relative;
+    padding: 20px;
+}
+.sidebar > button{
+    padding: 5px 12px;
+    background: transparent;
+    color: #ddd;
+    border: 1px solid #ddd;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.sidebar > button:hover{
+    color: red;
+    cursor: pointer;
+}
+.chat_container{
+    width: 80%;
+    height: 100%;
+}
+.chat_section{
+    width: 100%;
+    border: 1px solid #ddd;
+    height: 92%;
+    overflow-y: auto;
+}
+.chat_inputContainer{
+    width: 100%;
+    height: 8%;
+    background: tomato;
+
+
+}
+.chat_inputContainer form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.chat_input{
+    width: 90%;
+    height: 100%;
+    font-size: 18px;
+    text-indent: 20px;
+    outline: none;
+    border: none;
+}
+.chat_inputContainer button{
+    width: 10%;
+    height: 100%;
+    cursor: pointer;
+}
+.msg{
+    width: 25%;
+    border-radius: 5px;
+    margin: 10px;
+    display: flex;
+    padding: 14px;
+    background:#eee;
+}
+.msg.currentUser{
+    margin-left: 74%;
+    background: #d9fdd4;
+}
+.msg img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 16px;
+    user-select: none;
+    pointer-events: none;
+}
+.msg div h3{
+    color: #107e01;
+}
+.msg div p{
+    color: #000;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:950px) {
+    .msg{
+        width: 70%;
+    }
+    .msg.currentUser{
+        margin-left: 10px;
+    }
+}
+@media screen and (max-width:600px) {
+    .msg{
+        width: 90%;
+    }
+    .sidebar > h1{
+        font-size: 14px;
+    }
+    .sidebar{
+        padding: 40px 4px;
+    }
+    .sidebar > button{
+        padding: 5px ;
+        background: transparent;
+        color: #ddd;
+        border: 1px solid #ddd;
+        position: absolute;
+        left: 4px;
+        bottom: 40px;
+    }
+    .chat_input{
+        width: 80%;
+    }
+    .chat_inputContainer button{
+        width: 20%;
+    }
+}

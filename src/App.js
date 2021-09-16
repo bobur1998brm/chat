@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+// import ChatTest from './components/ChatTest'
 import './App.css';
+// import Show from './components/Show';
+// import Login from './components/login/Login';
+// import Chat from './components/chat/Chat';
+import {BrowserRouter as Router} from 'react-router-dom'
+import AppRouter from './components/AppRouter';
+  import {useAuthState} from 'react-firebase-hooks/auth'
+  import {auth} from './firebase'
+import Loading from './components/login/Loading';
 
 function App() {
+  const [user, loading] =  useAuthState(auth);
+  if(loading){
+    return <Loading/>
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <AppRouter/>
+      </Router>
+      {/* <ChatTest/> */}
+      {/* <Show/> */}
     </div>
+  
   );
 }
 
